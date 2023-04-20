@@ -1,0 +1,38 @@
+.accordion-content-right {
+  min-width: 100px;
+  margin-left: 25px;
+}
+.containerz {
+  position: absolute;
+  width: 70% !important;
+  top: 30%;
+  left: 30%;
+ z-index:1px;
+}
+.error ,span.text-danger p{
+  color: #f78298 !important;
+}
+.panel-heading.note-toolbar {
+    background: #dee2e6;
+}
+.featured-item {
+    min-height: 350px !important;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+ 
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.note-editor.note-airframe .note-editing-area .note-editable, .note-editor.note-frame .note-editing-area .note-editable {
+    background: #fff !important;
+}
+.panel-heading.note-toolbar {
+    background: #eee;
+    border-bottom: 4px solid #ccc;
+}

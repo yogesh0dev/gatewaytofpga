@@ -1,0 +1,917 @@
+<?php
+	$main=$this->router->fetch_class();
+	$sub=$this->router->fetch_method();
+	$try=$main.$sub;
+?>
+<!doctype html>
+<html lang="zxx">
+    <head>
+        <!-- Required Meta Tags -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/meanmenu.min.css">
+		<link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/magnific-popup.min.css">
+		<link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/owl.carousel.min.css">
+		<link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/owl.theme.default.min.css">
+		<link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/odometer.min.css">
+		<!--<link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/aos.css">
+        Plugins CSS -->
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/plugins.css">
+        <!-- Icon Plugins CSS -->
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/iconplugins.css">
+        <!-- Style CSS -->
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/style.css">
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/my.css">
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/dashboard.css">
+        <!-- Responsive CSS -->
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/responsive.css">
+        <!-- Theme Dark CSS -->
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/css/theme-dark.css">
+        <link type="text/css" rel="stylesheet" href="<?=site_url();?>assets/line-awesome/css/line-awesome.min.css">
+        <link href="<?=site_url();?>/assets/admin/plugins/select2/css/select2.min.css" rel="stylesheet" />
+	<link href="<?=site_url();?>/assets/admin/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
+		
+	
+        <!-- Title -->
+        <title>gatewaytofpga</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="<?=site_url();?>assets/images/favicon.png">
+    </head>
+    <body>
+        <!-- Pre Loader -->
+        <div id="preloader" style="display:none">
+            <div id="preloader-area">
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+            </div>
+            <div class="preloader-section preloader-left"></div>
+            <div class="preloader-section preloader-right"></div>
+        </div>
+        <!-- End Pre Loader -->
+<?php
+if($page!='main'){?>
+ <header class="top-header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-9 col-md-8">
+                        <div class="header-left">
+                            <ul>
+                                <li>
+                                    <i class="ri-phone-fill"></i>
+                                    <a href="+1(135)19842020">+1(135) 1984 2020</a>
+                                </li>
+                                <li>
+                                    <i class="ri-mail-fill"></i>
+                                    <a href="mailto:info@ledu.com">info@ledu.com</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4">
+                        <div class="header-right">
+                            <div class="header-language dropdown language-option"> 
+                                
+                            </div>
+
+                            <ul class="social-list">
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pinterest.com/" target="_blank">
+                                        <i class="ri-instagram-line"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+<?php }?>
+		 <!-- Start Navbar Area -->
+        <div class="navbar-area">
+            <div class="mobile-responsive-nav">
+                <div class="container">
+                   <div class="mobile-responsive-menu">
+                        <div class="logo">
+                            <a href="<?=site_url();?>">
+                                <img src="<?=site_url();?>assets/images/logos/logo-small.png" class="logo-one" alt="logo">
+                                <img src="<?=site_url();?>assets/images/logos/logo-small-white.png" class="logo-two" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu For Desktop Device -->
+            <div class="desktop-nav nav-area">
+                <div class="container-fluid">
+                    <nav class="navbar navbar-expand-md navbar-light ">
+                        <a class="navbar-brand" href="<?=site_url();?>">
+                            <img src="<?=site_url();?>assets/images/logos/logo.png" class="logo-one" alt="Logo">
+                            <img src="<?=site_url();?>assets/images/logos/logo-2.png" class="logo-two" alt="Logo">
+                        </a>
+
+                        <div class="nav-widget-form">
+                            <form method="post" class="search-form search-form-bg2" action="<?=site_url();?>search">
+                                <input  requiredname="search" type="search" class="form-control" placeholder="Search courses">
+                                <button type="submit">
+                                    <i class="ri-search-line"></i>
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="navbar-category">
+                            <div class="dropdown category-list-dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButtoncategory" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class='flaticon-list'></i>
+                                    Categories
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButtoncategory">
+								
+								<?php foreach($rcateg as $categ){
+									$category=str_replace("-","---",$categ['category']);
+									$category=str_replace(" ","-",$category);
+									$category=str_replace("/","--",$category);
+									?>
+                                    <a href="<?php echo site_url().'/categoryinfo/'.$category;?>" class="nav-link-item">
+                                        <?=$categ['icons'];?>
+                                        <?=$categ['category'];?>
+                                    </a>
+                                <?php }?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                 <li class="nav-item active">
+                                    <a href="<?=site_url();?>" class="nav-link">
+                                        Home
+                                    </a>
+                                </li>
+								
+								 <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                                    <a href="<?=site_url();?>course-details" class="nav-link">
+                                        All Courses
+                                    </a>
+                                </li>
+								<?php 
+								$data = $_SESSION['role'];
+								if(!$data){?>
+								 <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                                    <a href="<?=site_url();?>askfordemo" class="nav-link">
+                                        Book A Demo
+                                    </a>
+                                </li>
+								
+								
+								
+                                <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                                   <a href="#" class="nav-link dropdown-toggle">
+                                        Join Us 
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                                            <a href="<?=site_url();?>internship" class="nav-link">
+                                                Internship
+                                            </a>
+                                        </li>
+                                        <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                                            <a href="<?=site_url();?>career" class="nav-link">
+                                                Career
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+								
+                               
+                                <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                                    <a href="<?=site_url();?>contactus" class="nav-link">
+                                        Contact Us
+                                    </a>
+                                </li>
+								<?php }else{?>
+								<li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+								<div class="optional-item">
+									<a href="<?=site_url();?>main" style="color: #2c3e50;"> Welcome, <?php
+									echo $_SESSION['first_name'].' '.
+                                    $_SESSION['last_name'];
+									?></a>
+								</div>
+								
+                                   
+                                </li>
+								<?php }?>
+                            </ul>
+						<?php 
+						$data = $_SESSION['role'];
+						if($data){
+							?>
+						<div class="others-options d-flex align-items-center" style="padding-right: 10px;">
+                                <div class="optional-item">
+                                    <a href="<?=site_url();?>main/logout" class="default-btn two border-radius-5">Logout</a>
+                                </div>
+						</div>
+						<div class="optional-item">
+							<a href="<?=site_url();?>main" class="default-btn three border-radius-5">Dashboard</a>
+						</div>
+							 
+						<?php }else{ ?>
+						 <div class="others-options d-flex align-items-center" style="padding-right: 10px;">
+                                <div class="optional-item">
+                                    <a href="<?=site_url();?>login" class="default-btn one border-radius-5">Login</a>
+                                </div>
+                        </div> 
+						<div class="others-options d-flex align-items-center">
+							<div class="optional-item">
+								<a href="<?=site_url();?>signup" class="default-btn two border-radius-5">Sign Up</a>
+							</div>
+						</div> 
+							
+						
+						<?php }?>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="side-nav-responsive">
+                <div class="container">
+                    <div class="dot-menu">
+                        <div class="circle-inner">
+                            <div class="circle circle-one"></div>
+                            <div class="circle circle-two"></div>
+                            <div class="circle circle-three"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="side-nav-inner">
+                            <div class="side-nav justify-content-center align-items-center">
+                                <div class="side-item">
+                                    <form class="search-form">
+                                        <input  required type="search" class="form-control" placeholder="Search courses">
+                                        <button type="submit">
+                                            <i class="ri-search-line"></i>
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <div class="side-item">
+                                    <a href="signup.html" class="default-btn two">Sign Up</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar Area -->
+
+<?php
+if($page=='main'){?>
+	 
+		 <!-- Banner Area -->
+        <div class="banner-area banner-area-ptb">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="banner-content">
+                            <span data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">FOR A BETTER FUTURE</span>
+                            <h1 data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">Discover the most exciting online courses</h1>
+                            <p data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">Flexible easy to access learning opportunities can bring a significant change in how individuals prefer to learn! The Ellen can offer you to enjoy the beauty of eLearning!</p>
+                            <div class="banner-form-area" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
+                                <form method="post" class="banner-form search-form search-form-bg2" action="<?=site_url();?>search" data-toggle="validator" method="POST">
+                                    <input  required type="search" class="form-control" placeholder="Search your courses" name="search" required autocomplete="off">
+                                    <button class="default-btn" type="submit">
+                                        <i class="ri-search-line"></i> Search now
+                                    </button>
+                                </form>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-4 col-sm-3">
+                                    <div class="banner-counter" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
+                                        <h3>32M</h3>
+                                        <p>Learners</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-4 col-sm-3">
+                                    <div class="banner-counter" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
+                                        <h3>200M</h3>
+                                        <p>Countries</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-4 col-sm-3">
+                                    <div class="banner-counter" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
+                                        <h3>8.1k+</h3>
+                                        <p>Courses</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="banner-img-two" data-aos="fade-up" data-aos-delay="900" data-aos-duration="1000" data-aos-once="true">
+                            <img src="<?=site_url();?>assets/images/home-two/home-two.png" alt="Man" />
+                            <div class="bg-shape">
+                                <img src="<?=site_url();?>assets/images/home-two/home-shape.png" alt="Shape" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner Area End -->
+        <!-- Top Header End -->
+<?php }elseif($page=="student"){?>
+ <!-- Inner Banner -->
+        <div class="inner-banner inner-banner-bg2">
+            <div class="container" style="max-width: 100% !important;">
+                <div class="inner-title" style="padding: 25px !important;margin-bottom: 2%;text-align: center;">
+						<h3>Student Dashboard</h3>		
+                </div>
+            </div>
+        </div>
+        <!-- Inner Banner End -->
+<div class="container">
+   <div class="row">
+      <div class="col-xl-3 col-lg-4 col-md-12 theiaStickySidebar">
+         <div class="settings-widget dash-profile">
+            <div class="settings-menu p-0">
+               <div class="profile-bg">
+                  <h5>Student</h5>
+                  <img src="assets/img/instructor-profile-bg.jpg" alt="">
+                  <div class="profile-img">
+                     <a href="instructor-profile.html"><img src="assets/img/user/student.png" alt=""></a>
+                  </div>
+               </div>
+               <div class="profile-group">
+                  <div class="profile-name text-center">
+                     <h4><a href="student-profile.html">
+					 <?=$_SESSION['first_name'].' '.$_SESSION['last_name']?>
+					 </a></h4>
+                  
+                  </div>
+               
+               </div>
+            </div>
+         </div>
+         <div class="settings-widget account-settings">
+            <div class="settings-menu">
+               <h3>DASHBOARD</h3>
+			   
+               <ul>
+                  <li class="nav-item <?php if($try=='studentdashboard'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-dashboard" class="nav-link">
+                     <i class="feather-home"></i> My Dashboard
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='studentall_courses'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-all-courses" class="nav-link">
+                     <i class="feather-book"></i> All Courses
+                     </a>
+                  </li> 
+                  <li class="nav-item <?php if($try=='studentstudent_help'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-help" class="nav-link">
+                     <i class="feather-star"></i> Ask For Help
+                     </a>
+                  </li>
+				<li class="nav-item <?php if($try=='studentgethelplist'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-gethelp" class="nav-link">
+                     <i class="feather-star"></i> Help Q &amp; A
+                     </a>
+                  </li>
+                  
+				  <li class="nav-item <?php if($try=='studentstudent_payment'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-payment" class="nav-link">
+                     <i class="feather-pie-chart"></i> Payments
+                     </a>
+                  </li>
+				  
+				  <li class="nav-item <?php if($try=='studentstudent_edit_profile'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-edit-profile" class="nav-link ">
+                     <i class="feather-settings"></i> Edit Profile
+                     </a>
+                  </li>
+               </ul>
+			   <?php if(!empty($_SESSION['role'])){
+	
+				$myid = $this->Mycourses_model->ifpurchased($_SESSION['id']);
+			
+				if($myid[0]['purchased']==1){?>
+               <div class="instructor-title">
+                  <h3>Student Study Panel</h3>
+               </div>
+               <ul>
+                  <li class="nav-item <?php if($try=='studentstudent_courses'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-courses" class="nav-link ">
+                     <i class="feather-settings"></i>My Courses 	
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='studentstudent_trainer'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-trainer" class="nav-link">
+                     <i class="feather-user"></i> My Trainer
+
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='studentstudent_material'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-material" class="nav-link">
+                     <i class="feather-refresh-cw"></i> Course Material
+
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='studentstudent_assignments'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-assignments" class="nav-link">
+                     <i class="feather-bell"></i> Assignments
+
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='studentstudent_test'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-test" class="nav-link">
+                     <i class="feather-lock"></i> Test
+ 
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-report" class="nav-link">
+                     <i class="feather-trash-2"></i> Report
+
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='studentstudent_leave_testimony'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-leave-testimony" class="nav-link">
+                     <i class="feather-user"></i> Leave Testimony
+
+                     </a>
+                  </li>
+				  
+				  
+				  <li class="nav-item <?php if($try=='studentstudent_certificate'){?> active<?php }?>">
+                     <a href="<?=site_url();?>student-certificate" class="nav-link">
+                     <i class="feather-user"></i> Certificate
+
+                     </a>
+                  </li>
+				  
+			
+				  
+                  <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                     <a href="index.html" class="nav-link">
+                     <i class="feather-power"></i> Sign Out
+                     </a>
+                  </li>
+               </ul>
+			   <?php }}?>
+            </div>
+         </div>
+      </div>
+
+<?php }elseif($page=="trainers"){?>
+<div class="inner-banner inner-banner-bg2">
+            <div class="container" style="max-width: 100% !important;">
+                <div class="inner-title" style="padding: 25px !important;margin-bottom: 2%;text-align: center;">
+						<h3>Trainers Dashboard</h3>                    
+                </div>
+            </div>
+        </div>
+		
+        <!-- Inner Banner End -->
+<div class="container">
+   <div class="row">
+      <div class="col-xl-3 col-lg-4 col-md-12 theiaStickySidebar">
+         <div class="settings-widget dash-profile">
+            <div class="settings-menu p-0">
+               <div class="profile-bg">
+                  <h5>Trainers</h5>
+                  <img src="assets/img/instructor-profile-bg.jpg" alt="">
+                  <div class="profile-img">
+                     <a href="instructor-profile.html"><img src="assets/img/user/teacher.png" alt=""></a>
+                  </div>
+               </div>
+               <div class="profile-group">
+                  <div class="profile-name text-center">
+                     <h4><a href="#">Welcome,
+					 <?=$_SESSION['first_name'].' '.$_SESSION['last_name'];?>
+					 </a></h4>
+                  
+                  </div>
+               
+               </div>
+            </div>
+         </div>
+         <div class="settings-widget account-settings">
+            <div class="settings-menu">
+               <h3>DASHBOARD</h3>
+               <ul>
+                  <li class="nav-item 
+					 <?php if($try=='trainersdashboard'){?> active<?php }?>
+					 ">
+                     <a href="<?=site_url();?>trainers-dashboard" class="nav-link">
+                     <i class="feather-home"></i> My Dashboard
+                     </a>
+                  </li>
+                  
+                 <li class="nav-item <?php if($try=='trainerstrainers_help'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-help" class="nav-link">
+                     <i class="feather-star"></i> Student Queries
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='trainerstrainers_testimonials'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-testimonials" class="nav-link">
+                     <i class="feather-pie-chart"></i> Testimonials
+                     </a>
+                  </li>
+				 
+				  <li class="nav-item <?php if($try=='trainerstrainers_edit_profile'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-edit-profile" class="nav-link ">
+                     <i class="feather-settings"></i> Edit Profile
+                     </a>
+                  </li>
+               </ul>
+               <div class="instructor-title">
+                  <h3>Trainers Teaching Panel</h3>
+               </div>
+               <ul>
+                  <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-courses" class="nav-link ">
+                     <i class="feather-settings"></i>My Courses 	
+                     </a>
+                  </li>
+                
+                  <li class="nav-item <?php if($try=='trainerstrainers_material'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-material" class="nav-link">
+                     <i class="feather-refresh-cw"></i> Course Material
+
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='trainerstrainers_assignments'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-assignments" class="nav-link">
+                     <i class="feather-bell"></i> Assignments
+
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='trainerstrainers_test'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-test" class="nav-link">
+                     <i class="feather-lock"></i> Test
+ 
+                     </a>
+                  </li>
+                  <li class="nav-item <?php if($try=='trainersall_courses'){?> active<?php }?>">
+                     <a href="<?=site_url();?>trainers-report" class="nav-link">
+                     <i class="feather-trash-2"></i> Report
+
+                     </a>
+                  </li>
+            
+               </ul>
+            </div>
+         </div>
+      </div>
+<?php }else{
+		
+		if($page=='register'){
+		}elseif($page=='login'){
+		}elseif($page=='course_details'){
+		}else{
+		
+		?>
+   <!-- Inner Banner -->
+        <div class="inner-banner inner-banner-bg2">
+            <div class="container">
+                <div class="inner-title text-center">
+                    <h3><?php echo str_replace("_"," ",ucfirst($sub));?> </h3>
+                    <ul>
+                        <li>
+                            <a href="<?=site_url();?>">Home</a>
+                        </li>
+                        <li><?php echo str_replace("_"," ",ucfirst($sub));?></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Inner Banner End -->
+<?php }}?>
+			<?php
+							
+			if($_SESSION['buyid']){
+				if($_SESSION['role']=='student'){
+				$cname=$this->Courses_model->get_courses($_SESSION['buyid']);
+				echo "<div style=\"position: absolute;top: 30%;left: 30%;z-index: 1;width: 60%;\" class='alert alert-warning alert-dismissible' role='alert'>
+				You have enquired for <a href='".site_url()."purchase/".$_SESSION['buyid']."'>".$cname['title']."</a>. <br>Please Please click above link to finish the purchase or <a href='".site_url()."removebuy'>click here</a> to remove it from purchase list.
+				</div>";
+				}
+			}
+
+
+			?>	
+				<?php
+        //for warning -> flash_message
+        //for info -> success_message
+        
+        $arr = $this->session->flashdata();
+        if(!empty($arr['flash_message'])){
+            $html = '<div class="containerz" style="margin-top: 10px;">';
+            $html .= '<div class="alert alert-warning alert-dismissible" role="alert">';
+            $html .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            $html .= $arr['flash_message'];
+            $html .= '</div>';
+            $html .= '</div>';
+        }else if (!empty($arr['success_message'])){
+            $html = '<div class="containerz" style="margin-top: 10px;">';
+            $html .= '<div class="alert alert-info alert-dismissible" role="alert">';
+            $html .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            $html .= $arr['success_message'];
+            $html .= '</div>';
+            $html .= '</div>';
+        }else if (!empty($arr['danger_message'])){
+            $html = '<div class="containerz" style="margin-top: 10px;">';
+            $html .= '<div class="alert alert-danger alert-dismissible" role="alert">';
+            $html .= '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+            $html .= $arr['danger_message'];
+            $html .= '</div>';
+            $html .= '</div>';
+        }
+    ?>
+						
+			<?php                    
+			if(isset($_view) && $_view)
+				$this->load->view($_view);
+			?>
+			<?php if($page=='student'){}
+					elseif($page=='teacher'){}
+					else{
+						?>
+						
+        <!-- Newsletter Area -->
+        <div class="newsletter-area section-bg ptb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="section-title mt-rs-20">
+                            <span>ARE YOU IMPRESSED FOR AMAZING SERVICES?</span>
+                            <h2>Subscribe our newsletter</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form class="newsletter-form" data-toggle="validator" method="POST">
+                            <input  required type="email" class="form-control" placeholder="Enter Your Email Address" name="EMAIL" required autocomplete="off">
+                            <button class="subscribe-btn" type="submit">
+                                Subscribe Now  <i class="flaticon-paper-plane"></i>
+                            </button>
+                            <div id="validator-newsletter" class="form-result"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Newsletter Area End -->
+
+					<?php }?>
+<!-- Footer Area -->
+        <footer class="footer-area">
+            <div class="container pt-100 pb-70">
+                 <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <a href="index.html">
+                                    <img src="<?=site_url();?>assets/images/logos/logo-2.png" alt="Images">
+                                </a>
+                            </div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consec tetur
+                                adipiscing elit eiusmod tempor incididunt
+                                labore dolore magna aliqua consec tetur
+                                adipiscing elite sed do labor.
+                            </p>
+                            <ul class="social-link">
+                                <li class="social-title">Follow Us:</li>
+                                <li>
+                                    <a href="https://www.facebook.com/" target="_blank">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/" target="_blank">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.pinterest.com/" target="_blank">
+                                        <i class="ri-instagram-line"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget ps-5">
+                            <h3>About us</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="about.html">
+                                        About Us
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="signup.html">
+                                        Instructor registration
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="instructors.html">
+                                        Instructors
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="event.html">
+                                        Our Event
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="courses-list.html">
+                                        Courses List
+                                    </a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget ps-5">
+                            <h3>Resources</h3>
+                            <ul class="footer-list">
+                                <li>
+                                    <a href="index.html">
+                                        Home
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="courses.html" >
+                                        Courses
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="blog.html">
+                                        Our Blog
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="terms-condition.html">
+                                        Terms & conditions
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="privacy-policy.html">
+                                        Privacy Policy
+                                    </a>
+                                </li> 
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget ps-5">
+                            <h3>Official Info</h3>
+                            <ul class="footer-contact">
+                                <li>
+                                    <i class="ri-map-pin-2-fill"></i>
+                                    <div class="content">
+                                        <h4>Location:</h4>
+                                        <span>2976 Sunrise Road Las Vegas</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-mail-fill"></i>
+                                    <div class="content">
+                                        <h4>Email:</h4>
+                                        <span><a href="mailto:hello@ledu.com">hello@ledu.com</a></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <i class="ri-phone-fill"></i>
+                                    <div class="content">
+                                        <h4>Phone:</h4>
+                                        <span><a href="tel:098765432150">098765432150</a></span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-area">
+                <div class="container">
+                    <div class="copy-right-text text-center">
+                        <p>
+                            Copyright @<script>document.write(new Date().getFullYear())</script> <b>Ledu</b> All Rights Reserved 
+                            <a href="https://hibootstrap.com/" target="_blank">ss</a> 
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer Area End -->
+
+        <!-- Jquery Min JS -->
+        <script src="<?=site_url();?>assets/js/jquery.min.js"></script>
+        <!-- Plugins JS -->
+        <script src="<?=site_url();?>assets/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/meanmenu.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/ajaxchimp.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/form-validator.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/contact-form-script.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/owl.carousel.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/magnific-popup.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/aos.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/odometer.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/appear.min.js" type="text/javascript"></script>
+		<script src="<?=site_url();?>assets/js/tweenMax.min.js" type="text/javascript"></script>
+        <!-- Custom  JS -->
+        <script src="<?=site_url();?>assets/js/custom.js"></script>
+		 <script src="<?=site_url();?>/assets/admin/plugins/select2/js/select2.min.js"></script>
+		<script src="<?=site_url();?>/assets/admin/js/form-select2.js"></script>
+		
+		
+		<script>
+		// function fetchvalue(info,urlz){
+		function fetchvalue(info,urlz,newid){
+			var infoz=$('.'+info).find(':selected').val();
+			var urlz='<?=site_url();?>'+urlz+'/'+infoz;
+			$.ajax({
+			  type: 'GET',
+			  url:urlz,
+				}).done(function(res) {
+					var data = res;
+					var jdata = null;
+					try
+					{
+						jdata = $.parseJSON(data);  
+					}catch(e)
+					{}
+					if(jdata)
+					{
+						json = JSON.parse(res);
+						$('#course_id').val(json.id);
+						$('#cname').html(json.title);	
+					}else
+					{
+						$('.'+newid).html(res);
+					}
+					
+					
+					
+				});
+
+		}			//accepts form as parameter
+		function submitForm(form){ //accepts form as parameter
+		event.preventDefault();
+		$("#alertz").html('');
+			var formData = $(form).serialize(); //serialize this particular form
+			$.ajax({
+					  type: 'POST',
+					  url: $(form).attr('action'), //get value from forms action attrbute
+					  data: formData,
+					  enctype: 'multipart/form-data',
+						// processData: false,
+						// contentType: false,
+						// cache: false,
+						// timeout: 600000
+			}).done(function(response) {
+					if(response!='1'){
+						$("#alertz").html("<div style=\"width: 100%;\" class='alert alert-warning alert-dismissible' role='alert'>"+response+"</div>");
+						var scrollPos =  $(".inner-title").offset().top;
+						$(window).scrollTop(scrollPos);
+					}else{
+						$("#alertz").html("<div style=\"width: 100%;\" class='alert alert-success alert-dismissible' role='alert'>Your Information Has been Shared Successfully. </div>");
+						var scrollPos =  $(".inner-title").offset().top;
+						$(window).scrollTop(scrollPos);
+						history.go(-1);
+
+					}
+			});
+			
+		}
+		</script>
+    </body>
+</html>

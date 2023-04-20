@@ -1,0 +1,50 @@
+	<?php 
+		echo $this->session->flashdata('form');
+		$attributes= array('role'=>'form','class'=>'row g-3');
+		echo form_open_multipart("assignments/add",$attributes); 
+	?>
+
+	<div>
+		<span class="text-danger">*</span><label class="form-label">Course id : </label>
+		<select  name='course_id' class="form-select single-select course_id" id="select1" aria-label="Example select with button addon" "fetchvalue('course_id','common/getbatch','batch')>
+			<option value="">-- Select Course Name --</option>
+			<?php 
+			foreach($courses as $c)
+			{
+				$selected = ($c['id'] == $this->input->post('course_id')) ? ' selected="selected"' : "";
+
+				echo '<option value="'.$c['id'].'" '.$c.'>'.$c['title'].'</option>';
+			} 
+			?>
+		</select>
+		<select  name='country' class="form-select single-select country" id="select1" aria-label="Example select with button addon" onchange="fetchvalue('country','common/getstate','state')">
+		  <option value="">-- Search Country --</option>
+			<?php 
+			$count=$this->Common_model->get_country();
+			foreach($count as $cs){?>
+				<option value="<?=$cs['id'];?>"><?=$cs['name'];?></option>
+				</a>
+			<?php }?>  
+        </select>
+		<span class="text-danger"><?php echo form_error('course_id');?></span>
+	</div>
+	<div>
+		<span class="text-danger">*</span><label class="form-label">Title : </label>
+		<input class="form-control"placeholder='Title' type="text" name='title' value="<?php echo $this->input->post('title'); ?>" />
+		<span class="text-danger"><?php echo form_error('title');?></span>
+	</div>
+	<div>
+		<span class="text-danger">*</span><label class="form-label">Description : </label>
+		<textarea id="summernote"  rows="4" cols="4" class="form-control"placeholder='Description'name='description'><?php echo ($this->input->post('description') ? $this->input->post('description') : $assignments['description']); ?></textarea>
+		<span class="text-danger"><?php echo form_error('description');?></span>
+	</div>
+	<div>
+		<span class="text-danger">*</span><label class="form-label">Docsa : </label>
+		<input class="form-control"placeholder='Docsa' type="file"  id="formFileMultiple" multiple name='docsa[]' value="<?php echo ($this->input->post('status') ? $this->input->post('status') : $assignments['docsa']); ?>" />
+		<span class="text-danger"><?php echo form_error('docsa');?></span>
+	</div>
+	
+	
+	<button type="submit" class="btn btn-primary">Save</button>
+
+	<?php echo form_close(); ?>

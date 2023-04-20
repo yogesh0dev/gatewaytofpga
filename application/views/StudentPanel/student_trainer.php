@@ -1,0 +1,80 @@
+
+	  <div class="col-xl-9 col-lg-8 col-md-12">
+                     <div class="tak-instruct-group"> 
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div class="settings-widget">
+                                 <div class="settings-inner-blk p-0">
+                                    <div class="sell-course-head student-meet-head comman-space border-0">
+                                       <div class="tak-head d-flex align-items-center">
+                                          <div>
+                                             <h3>My Trainers</h3>
+                                             <p>Meet your trainers.</p>
+                                          </div>
+                                          <div class="view-icons">
+                                             <a href="instructor-student-grid.html" class="grid-view active"><i class="feather-grid"></i></a>
+                                             <a href="instructor-student-list.html" class="list-view"><i class="feather-list"></i></a>
+                                          </div>
+                                       </div>
+                                       <form>
+                                          <div class="student-search-form d-flex ">
+                                             <div class="form-group mb-0">
+                                                <input type="text" class="form-control" placeholder="Twitter Profile Name">
+                                             </div>
+                                             <div class="export-cvv-btn">
+                                                <button class="btn btn-primary">Export CSV</button>
+                                             </div>
+                                          </div>
+                                       </form>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+						 <?php foreach($trainers as $t){?>
+                           <div class="col-xl-4 col-lg-6 col-md-6 d-flex">
+                              <div class="student-box flex-fill">
+                                 <div class="student-box-blks">
+                                    <div class="message-text-img">
+                                       <a href="javascript:;">
+                                       <img class="img-fluid" alt="Students Info" src="assets/img/icon/message-text.svg">
+                                       </a>
+                                    </div>
+                                    <div class="student-img">
+                                       <a href="student-profile.html">
+                                       <img class="img-fluid" alt="Trainers Info" src="<?=site_url().'uploads/courses/'.$t['t_image'];?>">
+                                       </a>
+                                    </div>
+                                    <div class="student-content pb-0">
+                                       <h5><?=$t['name'];?></h5>
+                                     <!--  <div class="loc-blk d-flex align-items-center justify-content-center">
+                                          <i class="feather-map-pin me-2"></i>
+                                          <p>United States</p>
+                                       </div>
+									   -->
+                                    </div>
+                                 </div>
+                                 <div class="enrol-student-foot">
+                                    <ul>
+									<?php
+											$rty=json_decode($t['subjects']);
+											$ty='';
+											$s=0;
+											foreach ($rty as $result) {
+												$s=$s+1;
+												echo '<li>Subject No '.$s.': '.$result.'</li>';
+											}
+										?>
+                                       
+                                      
+                                    </ul>
+                                 </div>
+                              </div>
+                           </div>
+                           
+						 <?php }?>
+                        </div>
+                       </div>
+                  </div>
+              
+	</div>
+</div>

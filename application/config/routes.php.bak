@@ -1,0 +1,82 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+$route['default_controller'] = 'frontend/homepage';
+//front-end
+
+$route['login'] = 'frontend/login';
+$route['signup'] = 'frontend/signup';
+$route['buynow/(:any)'] = 'frontend/buynow/$1';
+$route['removebuy'] = 'frontend/removebuy';
+$route['purchase/(:any)'] = 'student/add_to_courses/$1';
+
+$route['about-us'] = 'frontend/aboutus';
+$route['internship'] = 'frontend/internship';
+$route['career'] = 'frontend/career';
+$route['search'] = 'frontend/search';
+$route['contactus'] = 'frontend/contactus';
+$route['askfordemo'] = 'frontend/askfordemo';
+
+
+$route['sitemap'] = 'frontend/sitemap';
+$route['contact-us'] = 'frontend/contacts';
+
+
+$route['categoryinfo/(:any)'] = 'frontend/category_courses/$1';
+$route['course-details/(:any)'] = 'frontend/course_details/$1';
+$route['course-details'] = 'frontend/course_list';
+
+////////////////////////STUDENT SETTINGS
+$route['student-dashboard'] = 'student/dashboard';
+$route['student-helpsubmit'] = 'student/helpsubmit';
+$route['student-gethelp'] = 'student/gethelplist';
+$route['student-all-courses'] = 'student/all_courses';
+$route['student-help'] = 'student/student_help';
+$route['student-testimonials'] = 'student/student_testimonials';
+$route['student-payment'] = 'student/student_payment';
+$route['student-edit-profile'] = 'student/student_edit_profile';
+$route['student-edits'] = 'student/student_edits';
+//paid info
+$route['student-courses'] = 'student/student_courses';
+$route['student-trainer'] = 'student/student_trainer';
+$route['student-material'] = 'student/student_material';
+$route['student-assignments'] = 'student/student_assignments';
+$route['addassignment'] = 'trainers/add_assignments';
+$route['addtest'] = 'trainers/add_test';
+$route['student-test'] = 'student/student_test';
+$route['student-leave-testimony'] = 'student/student_leave_testimony';
+$route['student-certificate'] = 'student/student_certificate';
+////////////////////////STUDENT SETTINGS
+////////////////////////////////// teacher settings
+$route['trainers-dashboard'] = 'trainers/dashboard';
+$route['attendance/(:any)'] = 'trainers/attendace/$1';
+$route['sattendance/(:any)'] = 'trainers/sattendace/$1';
+$route['trainers-all-courses'] = 'trainers/all_courses';
+$route['trainers-help'] = 'trainers/trainers_help';
+$route['trainers-helpanswer/(:any)'] = 'trainers/trainers_help_reply/$1';
+$route['trainers-testimonials'] = 'trainers/trainers_testimonials';
+$route['trainers-payment'] = 'trainers/trainers_payment';
+$route['trainers-edit-profile'] = 'trainers/trainers_edit_profile';
+//paid info
+$route['trainers-courses'] = 'trainers/trainers_courses';
+$route['trainers-student'] = 'trainers/trainers_student';
+$route['trainers-material'] = 'trainers/trainers_material';
+$route['trainers-assignments'] = 'trainers/trainers_assignments';
+$route['trainers-test'] = 'trainers/trainers_test';
+$route['trainers-leave-testimony'] = 'trainers/trainers_leave_testimony';
+$route['trainers-certificate'] = 'trainers/trainers_certificate';
+
+//////////////////////////////
+$route['batchlist'] = 'Course_schedule/india';
+$route['adminlogin'] = 'main/login';
+$route['captcha'] = 'Captcha';
+$route['dashboard'] = 'dashboard/index';
+//////////////////////////////fetch fomr values
+
+$route['fcourse/(:any)'] = 'course_details/fcourse/$1';
+
+////////ADMIN FORMS ENDS
+// $route['404_override'] = 'frontend';
+$route['404_override'] = '';
+$route['403_override'] = 'frontend';
+$route['translate_uri_dashes'] = TRUE;

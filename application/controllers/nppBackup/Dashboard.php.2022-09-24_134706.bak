@@ -1,0 +1,22 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Dashboard extends CI_Controller {
+	
+	function __construct()
+    {
+        parent::__construct();
+		$this->load->model('Category_model');
+		$this->session->set_userdata('role', 'admin');
+		
+    }	
+	public function index()
+	{
+		
+		$data['_view'] = 'Dashboard/home';
+        $this->load->view('layouts/main',$data);
+	}
+	
+	
+	 
+}

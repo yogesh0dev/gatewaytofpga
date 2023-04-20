@@ -1,0 +1,11 @@
+.accordion-content-right {
+  min-width: 100px;
+  margin-left: 25px;
+}
+.containerz {
+  position: absolute;
+  width: 70% !important;
+  top: 30%;
+  left: 30%;
+ z-index:1px;
+}
