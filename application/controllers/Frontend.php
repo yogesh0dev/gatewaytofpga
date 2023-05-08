@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Frontend extends CI_Controller {
-	
+
 	function __construct()
     {
         parent::__construct();
@@ -11,28 +11,28 @@ class Frontend extends CI_Controller {
 		$this->load->model('Common_model');
 		$this->load->model('Course_info_model');
 		$this->load->model('Course_schedule_model');
-    }	 
+    }
 	public function index()
 	{
-		$params['limit'] = RECORDS_PER_PAGE; 
+		$params['limit'] = RECORDS_PER_PAGE;
         $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
         $config = $this->config->item('pagination');
         $config['base_url'] = site_url('missing/index?');
-		
+
         $config['total_rows'] = $this->Category_model->get_all_category_count();
         $this->pagination->initialize($config);
 
         $data['missing'] = $this->Category_model->get_all_category($params);
-        
+
 		$data['_view'] = 'FrontWebsite/main';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function homepage()
 	{
-		$params['limit'] = RECORDS_PER_PAGE; 
+		$params['limit'] = RECORDS_PER_PAGE;
         $params['offset'] = 0;
-       
+
 		$data['rcateg'] = $this->Category_model->get_rand_list('5');
         $data['catregr'] = $this->Category_model->get_rand_list('10');
 // var_dump($data);
@@ -52,17 +52,17 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/main';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function video_list()
 	{
-		
-		$params['limit'] = RECORDS_PER_PAGE; 
+
+		$params['limit'] = RECORDS_PER_PAGE;
         $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
         $config = $this->config->item('pagination');
         $config['base_url'] = site_url('frontend/course_list?');
         $config['total_rows'] = $this->Courses_model->get_all_courses_count();
         $this->pagination->initialize($config);
-		
+
 		$this->load->model('Videos_model');
 		$this->load->model('Category_model');
 		$this->load->model('Courses_model');
@@ -75,17 +75,17 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/video_list';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function course_list()
 	{
-		
-		$params['limit'] = RECORDS_PER_PAGE; 
+
+		$params['limit'] = RECORDS_PER_PAGE;
         $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
         $config = $this->config->item('pagination');
         $config['base_url'] = site_url('frontend/course_list?');
         $config['total_rows'] = $this->Courses_model->get_all_courses_count();
         $this->pagination->initialize($config);
-		
+
 		///
 		$data['rcateg'] = $this->Category_model->get_rand_list('5');
 		$this->load->model('Courses_model');
@@ -99,7 +99,7 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/course_list';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function category_courses($ctitle)
 	{
 		$this->load->model('Courses_model');
@@ -111,11 +111,11 @@ class Frontend extends CI_Controller {
 		$ctitle=str_replace("-"," ",$ctitle);
 		$ctitle=str_replace("##","-",$ctitle);
 		//////////////////
-		$params['limit'] = RECORDS_PER_PAGE; 
+		$params['limit'] = RECORDS_PER_PAGE;
         $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
         $config = $this->config->item('pagination');
         $config['base_url'] = site_url('missing/index?');
-		
+
         $config['total_rows'] = $this->Courses_model->get_categ_courses_count($ctitle);
         $this->pagination->initialize($config);
 		///
@@ -128,8 +128,8 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/category_courses';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
-	
+
+
 	public function course_details($ctitle)
 	{
 		//////////////////
@@ -137,7 +137,7 @@ class Frontend extends CI_Controller {
 		$ctitle=str_replace("--","/",$ctitle);
 		$ctitle=str_replace("-"," ",$ctitle);
 		$ctitle=str_replace("##","-",$ctitle);
-		
+
 		//////////////////
 		$data['rcateg'] = $this->Category_model->get_rand_list('5');
         $data['catregr'] = $this->Category_model->get_rand_list('10');
@@ -150,15 +150,15 @@ class Frontend extends CI_Controller {
 		$data['courses'] = $this->Courses_model->get_courses_all($ctitle);
 		$cid=$data['courses']['course_id'];
 		$data['testimonials'] = $this->Testimony_model->get_all_testimony_id($cid);
-		
+
 		$data['related_courses'] = $this->Course_schedule_model->get_all_related_course_schedule_upcoming($cid);
-		
+
 		/////////
 		$data['page']='course_details';
 		$data['_view'] = 'FrontWebsite/course_details';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function category_details($id)
 	{
 		$this->load->model('Courses_model');
@@ -184,9 +184,9 @@ class Frontend extends CI_Controller {
 			if($checked)
 			{
 				//
-				$this->form_validation->set_rules('vcode','Validation Code Is Not Accurate, Please check again','trim|required|max_length[255]');		
-				if($this->form_validation->run())     
-				{		
+				$this->form_validation->set_rules('vcode','Validation Code Is Not Accurate, Please check again','trim|required|max_length[255]');
+				if($this->form_validation->run())
+				{
 						if($this->Bookacall_model->update_vcontacts($vid,$params))
 						{ echo 'Thanks for validating, you will soon recieve a call from us';}
 				}else{
@@ -198,22 +198,22 @@ class Frontend extends CI_Controller {
 			if($checked)
 			{
 				//
-				$this->form_validation->set_rules('vcode','Validation Code Is Not Accurate, Please check again','trim|required|max_length[255]');		
-				if($this->form_validation->run())     
+				$this->form_validation->set_rules('vcode','Validation Code Is Not Accurate, Please check again','trim|required|max_length[255]');
+				if($this->form_validation->run())
 				{
-						if($this->Contacts_model->update_vcontacts($vid,$params)){ 
+						if($this->Contacts_model->update_vcontacts($vid,$params)){
 						echo 'Thanks for validating, you will soon recieve a call from us';}
 				}else{
 					echo 'Validation Code Is Not Accurate, Please check again';
 				}
-			}else{	
+			}else{
 				echo '10';
-				}			
+				}
 		}
-				
+
 	}
-		
-	
+
+
 	public function login()
 	{
 		$data['page']='login';
@@ -221,8 +221,8 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/login';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
-	 
+
+
 	public function signup()
 	{
 		$data['page']='Institute Registration Form';
@@ -230,14 +230,14 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/signup';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function internship()
 	{
 		$data['page']='internship';
 		$data['_view'] = 'FrontWebsite/internship';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function courseschedule()
 	{
 		$this->load->model('Courses_model');
@@ -248,8 +248,8 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/courseschedule';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
-	
+
+
 	public function aboutus()
 	{
 		$data['page']='aboutus';
@@ -276,11 +276,21 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/privacy-policy';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
+	public function refund_policy()
+	{
+		$data['page']='refund-policy';
+		$this->load->model('Courses_model');
+		$data['courses'] = $this->Courses_model->get_all_courses($params);
+		$this->load->model('Blogs_model');
+		$data['pageinfo'] = $this->Blogs_model->get_page_info('refund-policy');
+		$data['_view'] = 'FrontWebsite/refund-policy';
+        $this->load->view('FrontWebsite/layout/main',$data);
+	}
 	public function our_blogs()
 	{
 		$this->load->model('Blogs_model');
 		$this->load->model('Courses_model');
-		$params['limit'] = RECORDS_PER_PAGE; 
+		$params['limit'] = RECORDS_PER_PAGE;
         $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
         $config = $this->config->item('pagination');
         $config['base_url'] = site_url('news-blogs/');
@@ -294,7 +304,7 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/blogs';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function blogs_details($id)
 	{
 		//////////////////
@@ -302,19 +312,19 @@ class Frontend extends CI_Controller {
 		$ctitle=str_replace("--","/",$ctitle);
 		$ctitle=str_replace("-"," ",$ctitle);
 		$ctitle=str_replace("##","-",$ctitle);
-		
+
 		$this->load->model('Blogs_model');
 		$this->load->model('Courses_model');
 
         $data['blogs'] = $this->Blogs_model->get_tblogs($ctitle);
-		
+
 		$data['page']=$data['blogs']['title'];
 		$data['courses'] = $this->Courses_model->get_all_courses($params);
 		$data['_view'] = 'FrontWebsite/blogs_details';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
-	
+
+
 	public function freshers_training()
 	{
 		$data['page']='freshers-training';
@@ -323,7 +333,7 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/freshers-training';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function corporate_training()
 	{
 		$data['page']='corporate-training';
@@ -348,8 +358,8 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/professional-training';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
-	
+
+
 	public function summer_training()
 	{
 		$data['page']='summer-training';
@@ -374,14 +384,14 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/faq';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function career()
 	{
 		$data['page']='career';
 		$data['_view'] = 'FrontWebsite/career';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	public function contactus()
 	{
 		$data['page']='contactus';
@@ -389,7 +399,7 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/contactus';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	 public function askfordemo()
 	 {
 		$data['page']='askfordemo';
@@ -397,11 +407,11 @@ class Frontend extends CI_Controller {
 		$data['_view'] = 'FrontWebsite/askfordemo';
         $this->load->view('FrontWebsite/layout/main',$data);
 	}
-	
+
 	 public function search()
 	 {
 		// var_dump($_POST);exit();
-		$params['limit'] = RECORDS_PER_PAGE; 
+		$params['limit'] = RECORDS_PER_PAGE;
         $params['offset'] = ($this->input->get('per_page')) ? $this->input->get('per_page') : 0;
         $config = $this->config->item('pagination');
         $config['base_url'] = site_url('missing/index?');
@@ -433,17 +443,17 @@ class Frontend extends CI_Controller {
 			redirect('/signup');
 		}
 	}
-	
+
 	 public function removebuy()
 	 {
 			unset($_SESSION['buyid']);
 			redirect($_SERVER['HTTP_REFERER']);
-		
+
 	}
-	
-	
-	
-	
-	
-	 
+
+
+
+
+
+
 }
