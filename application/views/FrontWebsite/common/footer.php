@@ -43,27 +43,27 @@
                                     <a href="about.html">
                                         About Us
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="signup.html">
                                         Instructor registration
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="instructors.html">
                                         Instructors
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="event.html">
                                         Our Event
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="courses-list.html">
                                         Courses List
                                     </a>
-                                </li> 
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -75,27 +75,32 @@
                                     <a href="index.html">
                                         Home
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="courses.html" >
                                         Courses
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="blog.html">
                                         Our Blog
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="terms-condition.html">
                                         Terms & conditions
                                     </a>
-                                </li> 
+                                </li>
                                 <li>
                                     <a href="privacy-policy.html">
                                         Privacy Policy
                                     </a>
-                                </li> 
+                                </li>
+                                <li>
+                                    <a href="refund-policy">
+                                        Refund Policy
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -133,8 +138,8 @@
                 <div class="container">
                     <div class="copy-right-text text-center">
                         <p>
-                            Copyright @<script>document.write(new Date().getFullYear())</script> <b>Ledu</b> All Rights Reserved 
-                            <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a> 
+                            Copyright @<script>document.write(new Date().getFullYear())</script> <b>Ledu</b> All Rights Reserved
+                            <a href="https://hibootstrap.com/" target="_blank">HiBootstrap</a>
                         </p>
                     </div>
                 </div>
