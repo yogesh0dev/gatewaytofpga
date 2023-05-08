@@ -14,6 +14,7 @@ $route['news-blogs'] = 'frontend/our_blogs';
 $route['blogs-details/(:any)'] = 'frontend/blogs_details/$1';
 $route['terms-conditions'] = 'frontend/terms_conditions';
 $route['privacy-policy'] = 'frontend/privacy_policy';
+$route['refund-policy'] = 'frontend/refund_policy';
 $route['freshers-training'] = 'frontend/freshers_training';
 $route['corporate-training'] = 'frontend/corporate_training';
 $route['121-training'] = 'frontend/training_121';
@@ -26,7 +27,7 @@ $route['signup'] = 'frontend/signup';
 $route['buynow/(:any)'] = 'frontend/buynow/$1';
 $route['removebuy'] = 'frontend/removebuy';
 $route['purchase/(:any)'] = 'student/add_to_courses/$1';
-$route['viewdocs/(:any)/(:any)'] = 'student/student_docs/$1/$2'; 
+$route['viewdocs/(:any)/(:any)'] = 'student/student_docs/$1/$2';
 
 $route['about-us'] = 'frontend/aboutus';
 $route['internships'] = 'frontend/internship';
@@ -58,7 +59,7 @@ $route['student-paydetails/(:any)'] = 'razorpay/checkout/$1';
 $route['student-edit-profile'] = 'student/student_edit_profile';
 $route['student-edits'] = 'student/student_edits';
 $route['srcard'] = 'student/srcard';
-$route['myCertificate/(:any)'] = "student/pdfGet/$1"; 
+$route['myCertificate/(:any)'] = "student/pdfGet/$1";
 //paid info
 $route['student-courses'] = 'student/student_courses';
 $route['student-trainer'] = 'student/student_trainer';
